@@ -20,11 +20,11 @@
 
     <help-url>http://search.jteam.nl/help</help-url>
 
-    <solr-core name="collection1">
+    <solr-core name="jobsearch">
 
         <debug query="true"/>
 
-        <server baseUrl="http://localhost:8983/solr">
+        <server baseUrl="http://localhost:8983/solr/jobsearch">
             <select-uri>/select</select-uri>
         </server>
 
@@ -33,12 +33,12 @@
         </search>
 
         <list-view>
-            <title-field default="[unknown]">title</title-field>
+            <title-field default="[unknown]">j_classification</title-field>
             <summary-field default="No special features" maxLength="500">features</summary-field>
         </list-view>
 
         <terms uri="/terms">
-            <field-names>cat</field-names>
+            <field-names>e_city</field-names>
         </terms>
 
         <spellcheck enabled="true">
@@ -51,20 +51,20 @@
 
         <facets>
 
-            <field-facet name="Category" mutuallyExclusive="false">
-                <field>cat</field>
+            <field-facet name="City" mutuallyExclusive="false">
+                <field>e_city</field>
                 <sort>count</sort>
                 <min-count>1</min-count>
             </field-facet>
 
-            <field-facet name="Author" mutuallyExclusive="false">
-                <field>author_s</field>
+            <field-facet name="Title" mutuallyExclusive="false">
+                <field>j_classification</field>
                 <sort>count</sort>
                 <min-count>1</min-count>
             </field-facet>
 
-            <field-facet name="In Stock" mutuallyExclusive="true">
-                <field>inStock</field>
+            <field-facet name="State" mutuallyExclusive="true">
+                <field>abbrvstate</field>
                 <min-count>0</min-count>
             </field-facet>
 

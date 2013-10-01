@@ -1,5 +1,6 @@
 export CONFIG_FILE=cores-config.xml
-export HTTP_PORT=8080
+
+export HTTP_PORT=8100
 
 export JAVA_OPTIONS=-Dconfig=$CONFIG_FILE
 
